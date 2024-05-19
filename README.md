@@ -1,8 +1,10 @@
 **Ravel - Minimal Typora Theme**
 
-**Preview**
+![preview1](https://github.com/isunjn/ravel/assets/60461730/d0f5fa0b-bc9a-4c2f-8fd5-9631c069c1da)
 
-// TODO
+
+![preview2](https://github.com/isunjn/ravel/assets/60461730/3fddd4bc-418c-4c76-9357-745a40944b00)
+
 
 **Installation**
 
