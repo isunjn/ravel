@@ -1,0 +1,605 @@
+/**
+ *  Ravel v0.1
+ *  Check for Updates: https://github.com/isunjn/ravel/releases
+ */
+
+:root {
+  --ravel-bg-color: #ffffff;
+  --ravel-text-color: #424149;
+  --ravel-text-pale-color: #8e8d91;
+  --ravel-accent-color: #33529d;
+  --ravel-accent-pale-color: #d1d6e5;
+  --ravel-scrollbar-thumb-color: #bbbbbb;
+  --ravel-scrollbar-thumb-hover-color: #aaaaaa;
+  --ravel-hover-bg-color: #f5f5f5;
+  --ravel-input-border-color: #42414920;
+  --ravel-input-border-focus-color: #42414940;
+  --ravel-blockquote-border-color: #8e8d9170;
+  --ravel-hr-color: #eeeeee;
+  --ravel-gutter-border-color: #bababa50;
+  --ravel-hover-accent-color: #bababa;
+  --ravel-table-border-color: #dbdbdb;
+  --ravel-table-btn-color: #8e8d9190;
+  --ravel-table-btn-hover-color: #000;
+  --ravel-highlight-color: #33529d70;
+  --ravel-code-tooltip-border-color: #f3f3f3;
+  --ravel-img-meta-color: #5b469b;
+  --ravel-blur-text-color: #dddddd;
+  --ravel-heading-char-color: #dddddd;
+
+  --bg-color: var(--ravel-bg-color);
+  --text-color: var(--ravel-text-color);
+  --md-char-color: var(--ravel-text-pale-color);
+  --meta-content-color: var(--ravel-text-pale-color);
+
+  --primary-color: var(--text-color);
+  --primary-btn-border-color: var(--text-color);
+  --primary-btn-text-color: var(--text-color);
+
+  --active-file-bg-color: var(--ravel-hover-bg-color);
+  --active-file-text-color: var(--text-color);
+  --active-file-border-color: var(--ravel-hover-bg-color);
+
+  --side-bar-bg-color: var(--bg-color);
+  --item-hover-bg-color: var(--ravel-hover-bg-color);
+  --item-hover-text-color: var(--text-color);
+
+  --select-text-bg-color: var(--ravel-accent-pale-color);
+  --rawblock-edit-panel-bd: var(--ravel-hover-bg-color);
+  --blur-text-color: var(--ravel-blur-text-color);
+  --heading-char-color: var(--ravel-heading-char-color);
+
+  --window-border: 1px solid var(--ravel-hover-bg-color);
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+}
+
+titlebar {
+  background-color: var(--bg-color);
+}
+
+html {
+  font-size: 16px;
+}
+
+#typora-sidebar,
+content,
+titlebar {
+  transition-duration: 0s;
+}
+
+/* ======= scrollbar ====== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  transition: 1s;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ravel-scrollbar-thumb-color);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: 1s;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background-color: var(--ravel-scrollbar-thumb-hover-color);
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: none;
+}
+
+/* ======= sidebar ====== */
+
+#typora-sidebar {
+  border-color: var(--ravel-hover-bg-color);
+}
+
+.sidebar-content {
+  background: var(--side-bar-bg-color);
+}
+
+.outline-content::-webkit-scrollbar,
+.sidebar-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.file-library-node:not(.file-node-root):focus > .file-node-content {
+  outline: none;
+}
+
+.file-node-background {
+  height: 30px;
+}
+.file-node-background:has(+ .file-node-content:hover) {
+  background-color: var(--active-file-bg-color);
+}
+
+.sidebar-tabs {
+  border-bottom: none;
+}
+
+.footer-btn {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dropdown-menu > li > a {
+  padding: 6px 20px;
+}
+#sidebar-new-file-btn {
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+}
+.file-node-icon {
+  margin-right: 6px;
+}
+.file-node-open-state {
+  margin-right: 3px;
+}
+.file-node-icon.fa-folder::before {
+  content: "\f114";
+}
+.file-node-icon.fa-file-text-o {
+  font-size: 0.9em;
+  padding-left: 0.11em;
+}
+.file-node-expanded > .file-node-content .fa-caret-down {
+  margin-top: 1px;
+  margin-left: -2px;
+}
+.file-node-collapsed .fa-caret-right::before {
+  content: "\f125";
+  font-family: Ionicons;
+  font-size: 8px;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.file-node-expanded .fa-caret-down::before {
+  content: "\f123";
+  font-family: Ionicons;
+  font-size: 8px;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+.file-node-icon.fa-folder {
+  min-width: 13px;
+}
+.file-tree-node {
+  padding-left: 12px;
+}
+.file-node-root {
+  padding-left: 6px;
+}
+.file-node-root > .file-node-children > .file-tree-node {
+  padding-left: 5px;
+}
+.file-node-title {
+  padding-left: 4px;
+}
+.file-list-item.active,
+.file-list-item:hover {
+  background: var(--ravel-hover-bg-color);
+  background: var(--active-file-bg-color);
+  color: var(--active-file-text-color);
+}
+.outline-content {
+  padding-inline: 14px;
+}
+.outline-label {
+  padding-left: 4px;
+}
+.outline-label:hover {
+  text-decoration: none;
+}
+.outline-expander:hover:before {
+  content: "\f125";
+}
+.outline-item {
+  padding-block: 6px;
+}
+#typora-sidebar-resizer.dragging .typora-sidebar-resizer-bar {
+  margin-left: -6px;
+}
+
+/* ======= search ======= */
+
+#md-searchpanel input {
+  border-radius: 2.5px;
+  border-color: var(--ravel-input-border-color);
+}
+#md-searchpanel input:focus {
+  border-radius: 2.5px;
+  border-color: var(--ravel-input-border-focus-color);
+}
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--ravel-hover-bg-color);
+  border-radius: 2.5px;
+}
+.form-control {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: var(--text-color);
+}
+#md-searchpanel {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 0.3em;
+}
+.mac-seamless-mode #md-searchpanel {
+  max-height: 66px;
+}
+.mac-seamless-mode #md-searchpanel.searchpanel-replace-mode {
+  max-height: 100px;
+}
+
+/* ======= typography ====== */
+
+#write {
+  background-color: var(--bg-color) !important;
+  max-width: 768px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 180px;
+  line-height: 1.75;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2rem;
+  margin-bottom: 1.35rem;
+}
+h1 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+  color: var(--heading-char-color);
+  position: absolute;
+  font-size: 0.75em;
+  left: -0.5em;
+  top: 0.45em;
+  transform: translateX(-100%);
+  font-weight: 400;
+  font-family: var(--monospace);
+  line-height: 1;
+  border: none;
+  float: none;
+}
+h1.md-focus:before {
+  content: "#";
+}
+h2.md-focus:before {
+  content: "##";
+}
+h3.md-focus:before {
+  content: "###";
+}
+h4.md-focus:before {
+  content: "####";
+}
+h5.md-focus:before {
+  content: "#####";
+}
+h6.md-focus:before {
+  content: "######";
+}
+
+p {
+  margin-block: 1.35rem;
+}
+
+blockquote {
+  margin-block: 1.35rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--ravel-blockquote-border-color);
+  color: var(--ravel-text-pale-color);
+}
+.md-alert {
+  border-width: 0.15em;
+}
+
+a {
+  text-underline-offset: 0.3em;
+  color: var(--ravel-accent-color);
+}
+a:hover {
+  opacity: 0.85;
+}
+
+code {
+  font-size: 0.9em;
+  background-color: var(--ravel-hover-bg-color);
+  border-radius: 2.5px;
+  padding: 0.1em 0.5em 0.15em;
+}
+
+hr {
+  border-top: 2px solid var(--ravel-hr-color);
+  margin-block: 2.5rem;
+}
+
+ol,
+ul {
+  margin-block: 1.35rem;
+  padding-inline-start: 2rem;
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-block: 0.5rem;
+}
+li p {
+  margin: 0.8rem 0;
+}
+
+.md-task-list-item > input {
+  margin-top: calc(1em - 8px);
+}
+
+figure {
+  margin-block: 2rem;
+}
+
+table thead {
+  font-weight: 500;
+}
+table tr,
+table th,
+table td {
+  border: 1px solid var(--ravel-table-border-color);
+}
+table th,
+table td {
+  padding: 4px 12px;
+}
+.md-table-more {
+  display: initial !important;
+}
+.md-table-more .md-table-more-label {
+  display: none !important;
+}
+.ty-table-edit .btn-group-xs > .btn,
+.ty-table-edit .md-table-more {
+  color: var(--ravel-table-btn-color);
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+.ty-table-edit .btn-group-xs > .btn.active,
+.ty-table-edit .btn-group-xs > .btn:hover,
+.ty-table-edit .md-table-more:hover {
+  color: var(--ravel-table-btn-hover-color);
+}
+button.md-table-more {
+  padding-inline: 4px;
+}
+button.md-table-more .ty-dots-v {
+  margin-inline: 4px;
+}
+button.md-table-more .ty-dots-v:before {
+  font-size: 0.9em;
+}
+
+mark {
+  background-color: var(--ravel-accent-color);
+  color: var(--bg-color);
+}
+.on-search-panel-open mark {
+  background-color: var(--ravel-highlight-color);
+}
+
+button {
+  background-color: var(--ravel-accent-color);
+  color: var(--bg-color);
+  font-size: 0.9em;
+  padding: 0.1rem 1rem;
+  border-radius: 5rem;
+  outline: none;
+  border: none;
+}
+
+.md-fences {
+  margin-block: 1.35rem;
+  background-color: var(--ravel-hover-bg-color);
+  border-radius: 2.5px;
+  tab-size: 4;
+}
+.CodeMirror {
+  border-radius: 2.5px;
+}
+.CodeMirror pre {
+  padding: 0;
+}
+.md-fences:not(:has(.CodeMirror-scroll)),
+.CodeMirror-scroll {
+  padding: 0.75rem 1rem;
+}
+pre.md-meta-block {
+  background: var(--ravel-hover-bg-color);
+  border-radius: 2.5px;
+  padding: 0.75rem 1rem;
+}
+.CodeMirror-linenumber {
+  color: var(--ravel-hover-accent-color);
+}
+#write .CodeMirror-linenumber {
+  transform: translateX(-100%);
+}
+.CodeMirror-gutter-wrapper {
+  left: -22px !important;
+}
+.CodeMirror-gutters {
+  left: 0 !important;
+  top: 0.75em;
+  border-color: var(--ravel-gutter-border-color);
+}
+.CodeMirror-line > span {
+  padding-right: 1rem !important;
+}
+.code-tooltip {
+  box-shadow: none;
+  border: 1px solid var(--ravel-code-tooltip-border-color);
+  padding: 0 !important;
+  background-color: var(--bg-color);
+}
+.code-tooltip .ty-input {
+  border: none;
+}
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-attribute {
+  color: #bf5f5f;
+}
+.cm-s-inner .cm-keyword,
+.cm-s-inner .cm-tag {
+  color: var(--ravel-accent-color);
+}
+.cm-s-inner .cm-comment {
+  color: #8e8d91;
+}
+.cm-s-inner .cm-string {
+  color: #579476;
+}
+.cm-s-inner .cm-number,
+.cm-s-inner .cm-atom {
+  color: #3a9a87;
+}
+.cm-s-inner .cm-property {
+  color: #9c5db8;
+}
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-builtin,
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-s-inner .cm-variable-3 {
+  color: inherit;
+}
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+  color: #39997b;
+}
+.cm-s-typora-default .cm-link {
+  color: #668ce6;
+}
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+  color: #8e8d91;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+  border-color: currentColor;
+}
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background: var(--ravel-hover-bg-color);
+}
+
+#typora-source .CodeMirror.cm-s-typora-default .CodeMirror-cursor {
+  border-color: #39997b;
+}
+
+.md-image > .md-meta {
+  color: var(--ravel-img-meta-color);
+}
+.md-hover-tip .code-tooltip-content {
+  padding: 6px 10px;
+}
+
+.on-focus-mode #write svg {
+  opacity: unset;
+}
+
+/* ======= others ====== */
+
+.context-menu {
+  padding-block: 0;
+}
+.popover {
+  border-radius: 4px;
+  border: none;
+  box-shadow:
+    rgba(15, 15, 15, 0.03) 0 0 0 1px,
+    rgba(15, 15, 15, 0.04) 0 3px 6px,
+    rgba(15, 15, 15, 0.05) 0 9px 24px;
+}
+table.md-grid-board {
+  margin: 8px 10px;
+}
+.md-table-resize-popover {
+  min-width: unset;
+}
+.md-resize-table-th .popover {
+  width: unset;
+}
+.popover-title {
+  padding: 8px;
+}
+.popover > .arrow {
+  display: none;
+}
+.popover.bottom {
+  margin-top: 6px;
+}
+.code-tooltip-content {
+  padding: 0;
+}
+#typora-quick-open {
+  border-radius: 2.5px;
+  padding: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+#typora-quick-open-input input {
+  box-shadow: none;
+  border: 1px solid var(--ravel-input-border-color);
+  max-height: unset;
+  padding: 2px 8px;
+}
+.typora-quick-open-item {
+  border-radius: 2.5px;
+}
+.typora-quick-open-item:hover {
+  cursor: pointer;
+  background-color: var(--active-file-bg-color);
+  border-color: var(--active-file-text-color);
+  color: var(--active-file-text-color);
+}

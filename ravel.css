@@ -1,0 +1,33 @@
+/**
+ *  Ravel v0.1
+ *  Check for Updates: https://github.com/isunjn/ravel/releases
+ */
+
+@import "ravel-light.css";
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root {
+    --ravel-bg-color: #141414;
+    --ravel-text-color: #b7b7b7;
+    --ravel-text-pale-color: #808080;
+    --ravel-accent-color: #668ce6;
+    --ravel-accent-pale-color: #39476a;
+    --ravel-scrollbar-thumb-color: #555555;
+    --ravel-scrollbar-thumb-hover-color: #666666;
+    --ravel-hover-bg-color: #1f1f1f;
+    --ravel-hover-accent-color: #4a4a4a;
+    --ravel-input-border-color: #b9b9b920;
+    --ravel-input-border-focus-color: #b9b9b940;
+    --ravel-blockquote-border-color: #80808070;
+    --ravel-hr-color: #2a2a2a;
+    --ravel-gutter-border-color: #4a4a4a50;
+    --ravel-table-border-color: #4a4a4a;
+    --ravel-table-btn-color: #86868690;
+    --ravel-table-btn-hover-color: #b9b9b9;
+    --ravel-highlight-color: #668ce670;
+    --ravel-code-tooltip-border-color: #3f3f3f;
+    --ravel-img-meta-color: #846bd1;
+    --ravel-blur-text-color: #303030;
+    --ravel-heading-char-color: #3f3f3f;
+  }
+}
