@@ -251,11 +251,15 @@ titlebar {
 
 /* ======= typography ====== */
 
+content {
+  overflow-y: scroll;
+}
+
 #write {
   background-color: var(--bg-color) !important;
   max-width: 768px;
   padding-left: 24px;
-  padding-right: 24px;
+  padding-right: 16px; /* scrollbar width 8px */
   padding-bottom: 180px;
   line-height: 1.75;
 }
@@ -440,6 +444,10 @@ button {
   border: none;
 }
 
+sup.md-footnote {
+  background-color: var(--ravel-hover-bg-color);
+}
+
 .md-fences {
   margin-block: 1.35rem;
   background-color: var(--ravel-hover-bg-color);
@@ -602,4 +610,21 @@ table.md-grid-board {
   background-color: var(--active-file-bg-color);
   border-color: var(--active-file-text-color);
   color: var(--active-file-text-color);
+}
+#ty-suppress-mode-warning-input {
+  margin-top: 0 !important;
+}
+#ty-suppress-mode-warning-close-btn {
+  color: var(--ravel-text-color);
+}
+#ty-suppress-mode-warning-close-btn:active {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+@keyframes blink-bg {
+  0%,
+  49% {
+    background-color: var(--ravel-accent-pale-color);
+  }
 }
