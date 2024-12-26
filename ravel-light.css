@@ -1,5 +1,5 @@
 /**
- *  Ravel v0.2
+ *  Ravel v0.3
  *  Check for Updates: https://github.com/isunjn/ravel/releases
  */
 
@@ -54,22 +54,23 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: var(--bg-color) !important;
+  line-height: 1.75;
 }
 
 titlebar {
   background-color: var(--bg-color);
 }
 
-html {
-  font-size: 16px;
-}
-
 #typora-sidebar,
 content,
 titlebar {
-  transition-duration: 0s;
+  transition-duration: 0.15s;
 }
 
 /* ======= scrollbar ====== */
@@ -149,16 +150,30 @@ titlebar {
 .file-node-open-state {
   margin-right: 3px;
 }
+.file-node-icon.fa-folder {
+  width: 0;
+  margin-right: 0 !important;
+}
 .file-node-icon.fa-folder::before {
   content: "\f114";
+  display: none;
 }
 .file-node-icon.fa-file-text-o {
   font-size: 0.9em;
   padding-left: 0.11em;
+  margin-left: 4px;
+  opacity: 0.5;
+}
+.file-node-icon.fa-file-text-o::before {
+  content: "\f016";
 }
 .file-node-expanded > .file-node-content .fa-caret-down {
   margin-top: 1px;
   margin-left: -2px;
+  opacity: 0.5;
+}
+.file-node-collapsed .fa-caret-right {
+  opacity: 0.5;
 }
 .file-node-collapsed .fa-caret-right::before {
   content: "\f125";
@@ -174,11 +189,8 @@ titlebar {
   display: inline-block;
   transform: translateY(-2px);
 }
-.file-node-icon.fa-folder {
-  min-width: 13px;
-}
 .file-tree-node {
-  padding-left: 12px;
+  padding-left: 16px;
 }
 .file-node-root {
   padding-left: 6px;
@@ -261,7 +273,8 @@ content {
   padding-left: 24px;
   padding-right: 16px; /* scrollbar width 8px */
   padding-bottom: 180px;
-  line-height: 1.75;
+  padding-top: 0px;
+  marign-top: 36px;
 }
 
 h2,
@@ -330,11 +343,11 @@ h6.md-focus:before {
 }
 
 p {
-  margin-block: 1.35rem;
+  margin-block: 1.5rem;
 }
 
 blockquote {
-  margin-block: 1.35rem;
+  margin-block: 1.5rem;
   padding-left: 1rem;
   border-left: 2px solid var(--ravel-blockquote-border-color);
   color: var(--ravel-text-pale-color);
@@ -365,7 +378,7 @@ hr {
 
 ol,
 ul {
-  margin-block: 1.35rem;
+  margin-block: 1.5rem;
   padding-inline-start: 2rem;
 }
 ol ol,
@@ -376,6 +389,18 @@ ul ul {
 }
 li p {
   margin: 0.8rem 0;
+  line-height: 1.75;
+}
+li > p:not(:has(span)) {
+  line-height: 1.25;
+  height: 1.75em;
+  transform: translateY(4px);
+}
+li {
+  line-height: 1.25;
+}
+li pre {
+  line-height: 1.75;
 }
 
 .md-task-list-item > input {
@@ -459,6 +484,9 @@ sup.md-footnote {
 }
 .CodeMirror pre {
   padding: 0;
+}
+#write li .CodeMirror-line {
+  line-height: 1.5625rem;
 }
 .md-fences:not(:has(.CodeMirror-scroll)),
 .CodeMirror-scroll {
