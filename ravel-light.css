@@ -1,5 +1,5 @@
 /**
- *  Ravel v0.3
+ *  Ravel v0.4
  *  Check for Updates: https://github.com/isunjn/ravel/releases
  */
 
@@ -70,7 +70,7 @@ titlebar {
 #typora-sidebar,
 content,
 titlebar {
-  transition-duration: 0.15s;
+  transition-duration: 0s;
 }
 
 /* ======= scrollbar ====== */
@@ -118,6 +118,10 @@ titlebar {
   width: 0px;
 }
 
+#typora-sidebar:hover #file-library-tree {
+  padding-bottom: 100px !important;
+}
+
 .file-library-node:not(.file-node-root):focus > .file-node-content {
   outline: none;
 }
@@ -145,10 +149,14 @@ titlebar {
   padding-bottom: 4.5px;
 }
 .file-node-icon {
-  margin-right: 6px;
+  margin-right: 3px;
 }
 .file-node-open-state {
   margin-right: 3px;
+  min-width: 10px;
+}
+.file-node-open-state:has(+.fa-file-text-o) {
+  display: none;
 }
 .file-node-icon.fa-folder {
   width: 0;
@@ -159,9 +167,7 @@ titlebar {
   display: none;
 }
 .file-node-icon.fa-file-text-o {
-  font-size: 0.9em;
-  padding-left: 0.11em;
-  margin-left: 4px;
+  font-size: 0.8em;
   opacity: 0.5;
 }
 .file-node-icon.fa-file-text-o::before {
@@ -169,11 +175,12 @@ titlebar {
 }
 .file-node-expanded > .file-node-content .fa-caret-down {
   margin-top: 1px;
-  margin-left: -2px;
+  margin-left: 1px;
   opacity: 0.5;
 }
 .file-node-collapsed .fa-caret-right {
   opacity: 0.5;
+  margin-left: 3px;
 }
 .file-node-collapsed .fa-caret-right::before {
   content: "\f125";
@@ -190,7 +197,7 @@ titlebar {
   transform: translateY(-2px);
 }
 .file-tree-node {
-  padding-left: 16px;
+  padding-left: 18px;
 }
 .file-node-root {
   padding-left: 6px;
@@ -215,6 +222,9 @@ titlebar {
 }
 .outline-label:hover {
   text-decoration: none;
+}
+.outline-expander {
+  opacity: 0.5;
 }
 .outline-expander:hover:before {
   content: "\f125";
