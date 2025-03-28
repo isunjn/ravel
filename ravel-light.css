@@ -1,5 +1,5 @@
 /**
- *  Ravel v0.4
+ *  Ravel v0.5
  *  Check for Updates: https://github.com/isunjn/ravel/releases
  */
 
@@ -71,6 +71,10 @@ titlebar {
 content,
 titlebar {
   transition-duration: 0s;
+}
+content,
+titlebar {
+  transition: 0.15s left ease-in-out;
 }
 
 /* ======= scrollbar ====== */
@@ -235,6 +239,10 @@ titlebar {
 #typora-sidebar-resizer.dragging .typora-sidebar-resizer-bar {
   margin-left: -6px;
 }
+.pin-outline #outline-content .outline-active strong, .pin-outline .outline-active {
+  font-weight: normal;
+  color: var(--ravel-accent-color);
+}
 
 /* ======= search ======= */
 
@@ -283,7 +291,7 @@ content {
   padding-left: 24px;
   padding-right: 16px; /* scrollbar width 8px */
   padding-bottom: 180px;
-  padding-top: 0px;
+  padding-top: 24px;
   marign-top: 36px;
 }
 
@@ -292,25 +300,25 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 1.35rem;
 }
 h1 {
-  margin-top: 1.75rem;
+  margin-top: 2rem;
   margin-bottom: 1.75rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 h2 {
-  font-size: 1.6rem;
-}
-h3 {
   font-size: 1.4rem;
 }
-h4 {
+h3 {
   font-size: 1.2rem;
 }
-h5 {
+h4 {
   font-size: 1.1rem;
+}
+h5 {
+  font-size: 1rem;
 }
 h6 {
   font-size: 1rem;
