@@ -1,12 +1,12 @@
 /**
- *  Ravel v0.5
+ *  Ravel v1.0
  *  Check for Updates: https://github.com/isunjn/ravel/releases
  */
 
 :root {
   --ravel-bg-color: #ffffff;
   --ravel-text-color: #424149;
-  --ravel-text-pale-color: #8e8d91;
+  --ravel-text-pale-color: #727077;
   --ravel-accent-color: #33529d;
   --ravel-accent-pale-color: #d1d6e5;
   --ravel-scrollbar-thumb-color: #bbbbbb;
@@ -22,6 +22,7 @@
   --ravel-table-btn-color: #8e8d9190;
   --ravel-table-btn-hover-color: #000;
   --ravel-highlight-color: #33529d70;
+  --ravel-mark-color: #f18a4540;
   --ravel-code-tooltip-border-color: #f3f3f3;
   --ravel-img-meta-color: #5b469b;
   --ravel-blur-text-color: #dddddd;
@@ -283,6 +284,7 @@ titlebar {
 
 content {
   overflow-y: scroll;
+  container: content / inline-size;
 }
 
 #write {
@@ -331,15 +333,25 @@ h5.md-focus:before,
 h6.md-focus:before {
   color: var(--heading-char-color);
   position: absolute;
-  font-size: 0.75em;
+  font-size: 0.85em;
   left: -0.5em;
-  top: 0.45em;
+  top: 0.5em;
   transform: translateX(-100%);
   font-weight: 400;
   font-family: var(--monospace);
   line-height: 1;
   border: none;
   float: none;
+}
+@container content (width <= 798px) {
+  h1.md-focus:before,
+  h2.md-focus:before,
+  h3.md-focus:before,
+  h4.md-focus:before,
+  h5.md-focus:before,
+  h6.md-focus:before {
+    display: none;
+  }
 }
 h1.md-focus:before {
   content: "#";
@@ -386,7 +398,10 @@ code {
   font-size: 0.9em;
   background-color: var(--ravel-hover-bg-color);
   border-radius: 2.5px;
-  padding: 0.1em 0.5em 0.15em;
+  padding: 0.1em 0.4em 0.15em;
+}
+.md-expand code {
+  padding: 0.1em 0.15em 0.15em;
 }
 
 hr {
@@ -470,8 +485,7 @@ button.md-table-more .ty-dots-v:before {
 }
 
 mark {
-  background-color: var(--ravel-accent-color);
-  color: var(--bg-color);
+  background-color: var(--ravel-mark-color);
 }
 .on-search-panel-open mark {
   background-color: var(--ravel-highlight-color);
@@ -601,6 +615,24 @@ pre.md-meta-block {
 
 .on-focus-mode #write svg {
   opacity: unset;
+}
+
+.md-toc {
+  margin: 0px;
+}
+.md-toc:focus {
+  margin: 20px 0px;
+}
+.md-toc-content {
+  margin: 20px 0px;
+  padding: 0px;
+  border: dashed 1px transparent;
+}
+.md-toc:focus .md-toc-content {
+  margin: 20px 0px !important;
+}
+#write div.md-toc-tooltip {
+  display: none !important;
 }
 
 /* ======= others ====== */
