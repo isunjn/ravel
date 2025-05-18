@@ -1,5 +1,5 @@
 /**
- *  Ravel v1.0
+ *  Ravel v1.1
  *  Check for Updates: https://github.com/isunjn/ravel/releases
  */
 
@@ -44,6 +44,9 @@
   --side-bar-bg-color: var(--bg-color);
   --item-hover-bg-color: var(--ravel-hover-bg-color);
   --item-hover-text-color: var(--text-color);
+
+  --search-select-bg-color: var(--ravel-text-color);
+  --search-select-text-color: var(--ravel-bg-color);
 
   --select-text-bg-color: var(--ravel-accent-pale-color);
   --rawblock-edit-panel-bd: var(--ravel-hover-bg-color);
@@ -705,4 +708,13 @@ table.md-grid-board {
   49% {
     background-color: var(--ravel-accent-pale-color);
   }
+}
+
+#typora-table-row-tracker .typora-on-moving td,
+#typora-table-row-tracker .typora-on-moving th,
+#typora-table-row-tracker td.typora-on-moving,
+#typora-table-row-tracker th.typora-on-moving {
+  color: unset;
+  background-color: unset;
+  opacity: 1;
 }
