@@ -5,8 +5,8 @@
 
 :root {
   --ravel-bg-color: #ffffff;
-  --ravel-text-color: #424149;
-  --ravel-text-pale-color: #727077;
+  --ravel-text-color: #2f3030;
+  --ravel-text-pale-color: #6f7070;
   --ravel-accent-color: #33529d;
   --ravel-accent-pale-color: #d1d6e5;
   --ravel-scrollbar-thumb-color: #bbbbbb;
@@ -54,8 +54,9 @@
   --heading-char-color: var(--ravel-heading-char-color);
 
   --window-border: 1px solid var(--ravel-hover-bg-color);
-  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --monospace:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 html {
@@ -64,7 +65,7 @@ html {
 
 body {
   background-color: var(--bg-color) !important;
-  line-height: 1.75;
+  line-height: 1.625;
 }
 
 titlebar {
@@ -121,6 +122,16 @@ titlebar {
   background: var(--side-bar-bg-color);
 }
 
+#file-library {
+  overflow-x: hidden;
+}
+#file-library::-webkit-scrollbar {
+  width: 0px;
+}
+#file-library-tree {
+  padding-left: 4px;
+}
+
 .outline-content::-webkit-scrollbar,
 .sidebar-content::-webkit-scrollbar {
   width: 0px;
@@ -132,6 +143,10 @@ titlebar {
 
 .file-library-node:not(.file-node-root):focus > .file-node-content {
   outline: none;
+}
+.file-node-on-edit > .file-node-content > .file-tree-rename-div {
+  position: relative;
+  transform: translate(-1px, -2px);
 }
 
 .file-node-background {
@@ -163,7 +178,7 @@ titlebar {
   margin-right: 3px;
   min-width: 10px;
 }
-.file-node-open-state:has(+.fa-file-text-o) {
+.file-node-open-state:has(+ .fa-file-text-o) {
   display: none;
 }
 .file-node-icon.fa-folder {
@@ -243,7 +258,8 @@ titlebar {
 #typora-sidebar-resizer.dragging .typora-sidebar-resizer-bar {
   margin-left: -6px;
 }
-.pin-outline #outline-content .outline-active strong, .pin-outline .outline-active {
+.pin-outline #outline-content .outline-active strong,
+.pin-outline .outline-active {
   font-weight: normal;
   color: var(--ravel-accent-color);
 }
@@ -297,7 +313,6 @@ content {
   padding-right: 16px; /* scrollbar width 8px */
   padding-bottom: 180px;
   padding-top: 24px;
-  marign-top: 36px;
 }
 
 h2,
@@ -306,25 +321,20 @@ h4,
 h5,
 h6 {
   margin-top: 2.5rem;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.5rem;
 }
 h1 {
-  margin-top: 2rem;
   margin-bottom: 1.75rem;
   font-size: 1.5rem;
 }
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
 }
 h3 {
   font-size: 1.2rem;
 }
-h4 {
-  font-size: 1.1rem;
-}
-h5 {
-  font-size: 1rem;
-}
+h4,
+h5,
 h6 {
   font-size: 1rem;
 }
@@ -385,6 +395,9 @@ blockquote {
   border-left: 2px solid var(--ravel-blockquote-border-color);
   color: var(--ravel-text-pale-color);
 }
+.on-focus-mode blockquote {
+  border-color: var(--ravel-blur-text-color);
+}
 .md-alert {
   border-width: 0.15em;
 }
@@ -415,7 +428,7 @@ hr {
 ol,
 ul {
   margin-block: 1.5rem;
-  padding-inline-start: 2rem;
+  padding-inline-start: 1.75rem;
 }
 ol ol,
 ol ul,
@@ -424,8 +437,8 @@ ul ul {
   margin-block: 0.5rem;
 }
 li p {
-  margin: 0.8rem 0;
-  line-height: 1.75;
+  margin: 0.5rem 0;
+  line-height: 1.625;
 }
 li > p:not(:has(span)) {
   line-height: 1.25;
@@ -525,12 +538,12 @@ sup.md-footnote {
 }
 .md-fences:not(:has(.CodeMirror-scroll)),
 .CodeMirror-scroll {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.875rem;
 }
 pre.md-meta-block {
   background: var(--ravel-hover-bg-color);
   border-radius: 2.5px;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.875rem;
 }
 .CodeMirror-linenumber {
   color: var(--ravel-hover-accent-color);
@@ -588,7 +601,7 @@ pre.md-meta-block {
 }
 .cm-s-typora-default .cm-header,
 .cm-s-typora-default .cm-property {
-  color: #39997b;
+  color: #668ce6;
 }
 .cm-s-typora-default .cm-link {
   color: #668ce6;
