@@ -653,6 +653,10 @@ pre.md-meta-block {
 
 /* ======= others ====== */
 
+pre.md-meta-block {
+  overflow-x: auto;
+}
+
 .context-menu {
   padding-block: 0;
 }
