@@ -521,8 +521,8 @@ button {
   border: none;
 }
 
-sup.md-footnote {
-  background-color: var(--ravel-hover-bg-color);
+sup.md-footnote.md-expand {
+  background-color: transparent;
 }
 
 .md-fences {
