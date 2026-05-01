@@ -263,6 +263,10 @@ titlebar {
   font-weight: normal;
   color: var(--ravel-accent-color);
 }
+#typora-sidebar-resizer:not(.dragging) .typora-sidebar-resizer-bar:hover {
+  width: 2px;
+  background: var(--blur-text-color);
+}
 
 /* ======= search ======= */
 
