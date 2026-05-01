@@ -1,6 +1,8 @@
-![preview](https://github.com/isunjn/ravel/assets/60461730/3fddd4bc-418c-4c76-9357-745a40944b00)
+Ravel - A minimal [typora](https://typora.io) theme
 
-**Ravel - A Minimal Typora Theme**
+![screenshot](https://raw.githubusercontent.com/isunjn/ravel/refs/heads/main/screenshot.png)
+
+How to install:
 
 1. Clone this repo or download the zip file and then extract it.
 
